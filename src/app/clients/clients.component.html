@@ -1,0 +1,40 @@
+<div class="p-3">
+
+  <div class="card">
+    <div class="card-header align-items-center">
+      <input [(ngModel)]="keyword" type="text">
+      <button (click)="search()" class="btn btn-outline-success ms-2">search</button>
+      <p>You are looking for {{ keyword }}</p>
+    </div>
+    <div class="card-body">
+
+      <table class="table">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Adresse</th>
+        </tr>
+        </thead>
+
+        <tbody *ngIf="clients">
+        <tr *ngFor="let c of clients">
+
+          <td> {{ c.name }}</td>
+          <td> {{ c.email }}</td>
+          <td> {{ c.adresse }}</td>
+          <td>
+            <button (click)="deleteProduct(c)" class=" btn btn-danger">delete</button>
+          </td>
+
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <div class="card-footer">
+      <p>footer</p>
+    </div>
+  </div>
+</div>
